@@ -3,8 +3,8 @@ from google.cloud import speech
 
 client = speech.SpeechClient.from_service_account_file('key.json')
 
-#file name changing soon
-file_name = "AudioTest.mp3"
+#audio name record
+file_name = "audio.wav"
 
 with open(file_name, 'rb') as f:
     mp3_data = f.read()
