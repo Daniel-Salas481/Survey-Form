@@ -4,7 +4,7 @@ from google.cloud import speech
 client = speech.SpeechClient.from_service_account_file('key.json')
 
 #file name changing soon
-file_name = "xxxx.mp3"
+file_name = "AudioTest.mp3"
 
 with open(file_name, 'rb') as f:
     mp3_data = f.read()
@@ -28,4 +28,8 @@ response = client.recognize(
     audio=audio_file
 )
 
+'''
+for result in response.results:
+    print("Transcript : {} ".format(result.alternatives[0]transcript))
+'''
 print(response)
