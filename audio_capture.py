@@ -1,6 +1,5 @@
 import pyaudio
 import wave
-import keyboard
 
 def audio_capture():
     #defining object
