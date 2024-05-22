@@ -35,3 +35,4 @@ def text_to_speech():
     for result in response.results:
         transcript = "{}".format(result.alternatives[0].transcript)
     print(transcript)
+    return transcript
