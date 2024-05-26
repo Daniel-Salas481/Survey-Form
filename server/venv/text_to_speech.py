@@ -1,5 +1,6 @@
 from google.cloud import speech
 
+
 def text_to_speech():
     client = speech.SpeechClient.from_service_account_file('key.json')
 
@@ -30,9 +31,14 @@ def text_to_speech():
 
     '''
     for result in response.results:
-        print("Transcript : {} ".format(result.alternatives[0]transcript))
+        print("Transcript : {} ".format(result.alternatives[0].transcript))
     '''
+
     for result in response.results:
         transcript = "{}".format(result.alternatives[0].transcript)
     print(transcript)
     return transcript
+
+
+text_to_speech()
+

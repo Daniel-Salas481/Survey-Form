@@ -1,6 +1,7 @@
 import pyaudio
 import wave
 
+
 def audio_capture():
     #defining object
     audio = pyaudio.PyAudio()
@@ -11,8 +12,6 @@ def audio_capture():
 
 
     frames = []
-
-    print("Tell us your response in regards to the recent of update of the game.")
 
     try:
         while True:
