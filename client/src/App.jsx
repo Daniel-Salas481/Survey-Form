@@ -112,17 +112,16 @@ const audioBufferToWavBlob = (audioBuffer) => {
 };
 
 
-const sendToServer = (blob) => {
+const sendToServer = async(blob) => {
+  const url = 'http://localhost:8080/upload';
   const formData = new FormData();
-  formData.append('file', blob, 'recording.wav');
-
-  fetch('http://localhost:8080/upload', {
-      method: 'POST',
-      body: formData,
-  })
-  .then(response => response.json())
-  .then(data => console.log(data))
-  .catch(error => console.error('Error:', error));
+  formData.append('file',blob)
+  const config = {
+    headers: {
+        'content-type': 'multipart/form-data'
+    }
+  }
+  await axios.post(url, formData,config)
 };
   
 
